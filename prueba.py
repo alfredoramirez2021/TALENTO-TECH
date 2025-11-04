@@ -1,8 +1,9 @@
-x = 10
+def calcular_area_y_perimetro(base, altura):
+    area = base * altura
+    perimetro = 2 * (base + altura)
+    return area, perimetro
 
-def modificar_global():
-    global x
-    x = 20
+a, p = calcular_area_y_perimetro(10, 5)
 
-modificar_global()
-print(x)  # Imprime 20
+print(a)
+print(p)
