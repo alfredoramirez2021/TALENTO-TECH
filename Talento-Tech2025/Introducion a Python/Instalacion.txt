@@ -1,6 +1,0 @@
-Editor + Lenguaje (Python)
-
-Visual Studio Code (Microsoft)
-Google Colab
-
-Python
