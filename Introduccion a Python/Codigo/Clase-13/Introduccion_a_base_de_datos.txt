@@ -1,0 +1,99 @@
+**** Base de Datos ****
+
+Es un software que se usa para guardar de manera segura y persistente, los datos de uno o varios sistemas. 
+
+
+SQL (Lenguaje Universal de Base de Datos)
+
+Las bases de datos modernas (llamadas relacionales) manejan un lenguaje propio universal llamado SQL (Structure Query Lenguage). A travez de ese lenguaje se pueden manipular los datos que utilizan los sistemas.
+
+1) Crear una Base de Datos
+
+Base de Datos también se llama a la estructura contenedora que creamos para luego incluir adentro todos los elementos de datos que precisamos almacenar. Ejemplo: en un ejercicio de manejo de inventario, podríamos crear la base de datos llamada "inventario.db".
+
+Podemos crear una base de datos desde sqlite studio.
+
+2)
+
+El elemento mas importante de una base de datos es la "TABLA". Ejemplo, en un ejercicio de manejo de inventario podriamos crear la tabla llamada "productos", para almacenar con comandos sql los productos del inventario de una compañía. 
+
+CREATE TABLE productos (
+    id       INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre   TEXT    NOT NULL,
+    cantidad INTEGER NOT NULL,
+    precio   REAL    NOT NULL
+);
+
+3)
+
+Una vez creada la tabla podemos empezar a guardar información ingresando productos nuevos, consultar los actuales, actualizarlos datos de los productos o inclusive eliminarlos. Todo siempre mediante los comandos del lenguaje SQL.
+
+
+3a) Insertando nuevos productos (nombre, cantidad, precio)
+
+INSERT INTO productos (nombre, cantidad, precio)
+values("Peine", 20, 1200);
+
+INSERT INTO productos (nombre, cantidad, precio)
+values("Cepillo", 32, 2500);
+
+INSERT INTO productos (nombre, cantidad, precio)
+values("Alicate", 12, 1800);
+
+
+3b) Mostrando productos
+
+SELECT * 
+FROM productos;
+
+SELECT nombre
+FROM productos;
+
+SELECT *
+FROM productos
+ORDER BY nombre;
+
+Buscar los datos un producto determinado a través de su ID.
+
+SELECT *
+FROM productos 
+WHERE ID = 2;
+
+Buscar los datos de un producto determinado a través de su nombre.
+
+SELECT * 
+FROM productos
+where nombre = "Cepillo";
+
+Consultar los productos cuya cantidad es menor a una cantidad establecida (por ejemplo 20).
+
+SELECT *
+FROM productos
+WHERE cantidad < 20;
+
+
+3c) Modificando productos existentes
+
+Modificar la cantidad de productos a 14 para el producto cuyo ID es igual a 1.
+
+UPDATE productos
+SET cantidad = 14
+WHERE id = 1;
+
+Modificar el precio (llevándolo a 2000) del producto cuyo nombre es Cepillo.
+
+UPDATE productos
+SET precio = 2000
+WHERE nombre = "Cepillo"
+
+3d) Eliminar un producto existente
+
+Eliminando el producto cuyo id = 3.
+
+DELETE FROM productos
+WHERE id = 3;
+
+
+
+ 
+
